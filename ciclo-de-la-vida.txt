@@ -1,0 +1,60 @@
+1. Definicion De Necesidades
+    - Reservas (Booking Engine)
+    - Control de Accesso (Cerraduras Electrónicas)
+    - Channel Manager
+    - Sistema de Fidelización
+    - Reservas
+    - Base de Datos (Registro de Usuarios)
+    - Seguridad Informatica
+    
+2. Analisis
+    (preguntar profersor)
+
+3. Diseño
+
+    BASE DE DATOS {
+        ID, DNI, EMAIL, Nº TARJETA, NOMBRE, 1º APELLIDO, 2ºAPELLIDO, TELEFONO, FECHA ENTRADA, FECHA SALIDA, Nº HABITACION, NIVEL, ACTIVIDADES.
+    }
+
+    WEB {
+        Paleta de Colores 
+
+        Header: Logo, Reservar, Iniciar Sesion, Crear Cuenta, Idioma.
+        Menu-Inferior ( Header ): Destinos, entrada/salida ( Calendario ), cantidadpersonas, habitaciones. 
+        Body: Galeria (Fotos, Descripcion, Precio), Servicios (Spa, Masages, Actividades).
+        Footer: Red Social, Marca de Agua.
+    }
+
+4. Codificacion
+
+
+
+5. Pruebas
+
+
+
+6. Validacion
+
+
+
+7. Mantenimiento y evolucion
+
+
+
+CREATE TABLE reservas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_cliente VARCHAR(100) NOT NULL,
+    email VARCHAR(100),
+    telefono VARCHAR(20),
+    fecha_entrada DATE NOT NULL,
+    fecha_salida DATE NOT NULL,
+    numero_habitacion INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
